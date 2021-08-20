@@ -27,11 +27,31 @@ document.getElementById('key-pad').addEventListener('click', function(event){
         }
     }
     else{
-        const PreCalcNumber = calcInput.value;
-        const newCalcNumber = PreCalcNumber + number;
+        const preCalcNumber = calcInput.value;
+        const newCalcNumber = preCalcNumber + number;
         calcInput.value = newCalcNumber;
     }
     
+});
+
+function verifyPin(){
+    const pin = document.getElementById('display-pin').value;
+    const typedNumber = document.getElementById('typed-number').value;
     
-    
-})
+    const successSms = document.getElementById('success-sms');
+    const errorFailed = document.getElementById('error-fail');
+    if(pin == typedNumber){
+        successSms.style.display = 'block';
+        errorFailed.style.display = 'none';
+    }
+    else{
+        errorFailed.style.display = 'block';
+        successSms.style.display = 'none';
+    }
+
+}
+
+
+
+
+
